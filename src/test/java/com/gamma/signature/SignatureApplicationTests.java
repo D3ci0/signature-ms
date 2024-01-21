@@ -34,7 +34,6 @@ class SignatureApplicationTests {
 		headers.setContentType(MediaType.MULTIPART_FORM_DATA);
 
 		MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
-		body.add("file_name", "testFile");
 		body.add("file", resource);
 
 		HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(body, headers);
