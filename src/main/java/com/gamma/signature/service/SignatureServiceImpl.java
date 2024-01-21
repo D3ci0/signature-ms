@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.*;
 
-@Service("SignatureServiceImpl")
+@Service("signatureServiceImpl")
 public class SignatureServiceImpl implements SignatureService{
     @Override
     public byte[] sign(byte[] input) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {

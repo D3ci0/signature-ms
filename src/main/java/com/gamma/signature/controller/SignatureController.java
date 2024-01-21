@@ -48,7 +48,7 @@ public class SignatureController {
     }
 
     @Autowired
-    @Qualifier("SignatureServiceImpl")
+    @Qualifier("signatureServiceImpl")
     public void setSignatureService(SignatureService signatureService) {
         this.signatureService = signatureService;
     }
