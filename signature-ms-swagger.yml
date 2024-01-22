@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  description: Il seguente documento descrive le API messe a disposizione dal servizio Signature della piattaforma Gamma
+  version: "0.0.1"
+  title: Signature Service
+paths:
+  '/v1/sign':
+    post:
+      summary: Sign the input file
+      operationId: signFile
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: array
+              items:
+                type: string
+                format: binary
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/octet-stream:
+              schema:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
