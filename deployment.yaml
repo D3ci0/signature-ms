@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: signature-ms
+  name: signature-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: signature-ms
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: signature-ms
+    spec:
+      containers:
+      - image: decioc/signature-ms
+        name: signature-ms
+        resources:
+          requests:
+            cpu: 200m
+            memory: 600Mi
+          limits:
+            cpu: 200m
+            memory: 800Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: signature-ms
+  labels:
+    app: signature-ms
+spec:
+  type: ClusterIP
+  ports:
+    - name: signature-ms
+      port: 8082
+      protocol: TCP
+  selector:
+    app: signature-ms
+status: {}
